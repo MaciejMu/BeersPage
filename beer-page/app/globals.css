@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: rgb(234, 226, 211);
+}
+
+.navbar {
+  padding: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 3px solid rgb(41, 35, 35);
+  align-items: center;
+}
+
+.navbar__list {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar__item {
+  text-decoration: none;
+  color: rgb(41, 35, 35);
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+.navbar__item:hover {
+  color: rgb(118, 104, 104);
+}
+
+.beer {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
