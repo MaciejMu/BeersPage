@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import { Beer } from "../types";
 
@@ -8,19 +9,22 @@ const fetchBeer = async () => {
   return beer;
 };
 
-async function Carusele() {
+async function Ale() {
   const beer = await fetchBeer();
 
   return (
-    <div className="beer">
+    <main>
       {beer.map((b) => (
-        <p className="beer__number" key={b.id}>
-          {b.id}
-          <Link className="beer__name" href={`/ale/${b.id}`}> {b.name} </Link>
-        </p>
+        <Link className="beers" href={`/ale/${b.id}`} key={b.id}>
+          <article className="data">
+            <h2 className="data__number">{b.id}</h2>
+            <p className="data__name">{b.name}</p>
+          </article>
+          <Image src={b.image} alt="" width={150} height={150}></Image>
+        </Link>
       ))}
-    </div>
+    </main>
   );
 }
 
-export default Carusele;
+export default Ale;
