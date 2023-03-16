@@ -14,6 +14,71 @@ body {
   background: rgb(234, 226, 211);
 }
 
+.home__header {
+  padding: 3%;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.styles__ale,
+.styles__stouts,
+.styles__red-ale {
+  height: 100%;
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border: 3px solid rgb(41, 35, 35);
+  text-decoration: none;
+  color: rgba(41, 35, 35, 0);
+  overflow: hidden;
+}
+
+.img__container {
+  position: relative;
+}
+
+.styles__name {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.styles__ale:hover > .styles__name,
+.styles__stouts:hover > .styles__name,
+.styles__red-ale:hover > .styles__name {
+  transition: 0.7s ease-in-out;
+  width: 33.3%;
+  background: rgba(234, 226, 211, 0.459);
+  color: rgb(41, 35, 35);
+  font-size: 4rem;
+}
+
+.styles__img {
+  height: 100%;
+}
+
+.home__header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar {
   padding: 2%;
   display: flex;
@@ -35,6 +100,7 @@ body {
   color: rgb(41, 35, 35);
   font-size: 1.2rem;
   font-weight: bolder;
+  letter-spacing: 0.1rem;
 }
 
 .navbar__item:hover {
@@ -45,4 +111,27 @@ body {
   display: flex;
   flex-direction: column;
   padding: 2%;
+}
+
+.error__msg {
+display:flex;
+justify-content:center;
+padding-top:5%;
+font-size:4rem
+}
+
+.beer__single{
+  padding:2%;
+  border-bottom: 2px solid black
+}
+
+.beer__number{
+  font-weight:800;
+  font-size:2rem
+}
+
+.beer__name{
+  font-weight:500;
+  font-size:1rem;
+
 }

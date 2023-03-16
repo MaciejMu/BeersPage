@@ -1,9 +1,9 @@
 import "./globals.css";
-import Navbar from "./Navbar";
+import Navbar from "./components/navbar";
 import { Playfair_Display } from "next/font/google";
 
 const playfairDisplay = Playfair_Display({
-  weight: ["400", "800"],
+  weight: ["400", "500", "800"],
   subsets: ["latin"],
 });
 

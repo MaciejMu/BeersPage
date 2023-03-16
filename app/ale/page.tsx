@@ -14,9 +14,9 @@ async function Carusele() {
   return (
     <div className="beer">
       {beer.map((b) => (
-        <p key={b.id}>
+        <p className="beer__number" key={b.id}>
           {b.id}
-          <Link href={`/beers/${b.id}`}> {b.name} </Link>
+          <Link className="beer__name" href={`/ale/${b.id}`}> {b.name} </Link>
         </p>
       ))}
     </div>
