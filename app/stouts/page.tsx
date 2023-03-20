@@ -2,9 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import { Beer } from "../types";
-import noImg from "../public/no-img.jpeg";
 
-// const placeholderImageUrl = noImg;
+const placeholderImageUrl = "https://placehold.co/150x150";
 
 const fetchBeer = async () => {
   const res = await fetch("https://api.sampleapis.com/beers/stouts");
@@ -32,7 +31,12 @@ async function Stout() {
               unoptimized
             ></Image>
           ) : (
-            <Image src={noImg} alt="" width={150} height={150}></Image>
+            <Image
+              src={placeholderImageUrl}
+              alt=""
+              width={150}
+              height={150}
+            ></Image>
           )}
         </Link>
       ))}

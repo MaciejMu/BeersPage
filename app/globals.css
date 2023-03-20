@@ -163,6 +163,7 @@ section {
   font-size: 3rem;
   letter-spacing: 0.2rem;
   padding: 2%;
+  height: auto;
 }
 
 .information-section {
@@ -176,4 +177,8 @@ section {
   padding: 5%;
   font-size: 2rem;
   font-weight: 600;
+}
+
+.list-img {
+  width: auto;
 }
