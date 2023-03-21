@@ -1,13 +1,8 @@
-import { Beer } from "@/app/types";
+import { Beer } from "@/types/types";
 import React from "react";
-import Image from "next/image";
 import notFound from "./not-found";
-
-type PageProps = {
-  params: {
-    beerId: string;
-  };
-};
+import CustomImage from "@/app/components/customImg/customImage";
+import { PageProps } from "@/types/types";
 
 const fetchBeer = async (beerId: string) => {
   const res = await fetch(`https://api.sampleapis.com/beers/stouts/${beerId}`);
@@ -15,7 +10,7 @@ const fetchBeer = async (beerId: string) => {
   return beer;
 };
 
-async function Beer({ params: { beerId } }: PageProps) {
+const Beer = async ({ params: { beerId } }: PageProps) => {
   const beer = await fetchBeer(beerId);
   if (!beer.id) {
     return notFound();
@@ -24,17 +19,17 @@ async function Beer({ params: { beerId } }: PageProps) {
     <>
       <h1 className="single-beer__title">{beer.name}</h1>
       <article className="single-beer">
-        <Image
-          className="single-beer__img"
+        <CustomImage
+          className="img"
           src={beer.image}
-          alt={beer.name}
+          alt={`${beer.name} image`}
           width={400}
           height={400}
+          placeholderimg={"https://placehold.co/400x400"}
+          unoptimized
         />
         <section className="information-section">
-          <span className="information-section__price">
-            Price: {beer.price}
-          </span>
+          <span className="information-section__price">{beer.price}</span>
           <p className="information-section__description">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos
             officiis accusamus impedit dolorum numquam eligendi maxime id enim
@@ -61,6 +56,6 @@ async function Beer({ params: { beerId } }: PageProps) {
       </article>
     </>
   );
-}
+};
 
 export default Beer;

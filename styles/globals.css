@@ -1,3 +1,8 @@
+:root {
+  --main-dark-color: rgb(41, 35, 35);
+  --main-light-color: rgb(234, 226, 211);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,7 +16,7 @@ body {
 }
 
 body {
-  background: rgb(234, 226, 211);
+  background: var(--main-light-color);
 }
 
 .home__header {
@@ -41,9 +46,9 @@ section {
   justify-content: center;
   align-items: center;
   font-size: 4rem;
-  border: 3px solid rgb(41, 35, 35);
+  border: 3px solid var(--main-dark-color);
   text-decoration: none;
-  color: rgba(41, 35, 35, 0);
+  color: transparent;
   overflow: hidden;
 }
 
@@ -64,8 +69,8 @@ section {
   transition: 0.7s ease-in-out;
   width: 33.3%;
   background: rgba(234, 226, 211, 0.459);
-  color: rgb(41, 35, 35);
-  height: 100%;
+  color: var(--main-dark-color);
+  height: 70%;
 }
 
 .styles__img {
@@ -81,30 +86,7 @@ section {
 
 .navbar {
   padding: 2%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  border-bottom: 3px solid rgb(41, 35, 35);
-  align-items: center;
-}
-
-.navbar__list {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  list-style: none;
-}
-
-.navbar__item {
-  text-decoration: none;
-  color: rgb(41, 35, 35);
-  font-size: 1.2rem;
-  font-weight: bolder;
-  letter-spacing: 0.1rem;
-}
-
-.navbar__item:hover {
-  color: rgb(118, 104, 104);
+  border-bottom: 3px solid var(--main-dark-color);
 }
 
 .beers:hover {
@@ -120,7 +102,7 @@ section {
   display: flex;
   flex-direction: row;
   padding: 2%;
-  border: 2px solid rgb(41, 35, 35);
+  border: 2px solid var(--main-dark-color);
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
@@ -128,13 +110,13 @@ section {
 
 .beer__single {
   padding: 2%;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid var(--main-dark-color);
 }
 
 .data {
   display: flex;
   align-items: center;
-  color: black;
+  color: var(--main-dark-color);
 }
 
 .data__number {
@@ -160,10 +142,9 @@ section {
 }
 
 .single-beer__title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   letter-spacing: 0.2rem;
   padding: 2%;
-  height: auto;
 }
 
 .information-section {
@@ -177,8 +158,9 @@ section {
   padding: 5%;
   font-size: 2rem;
   font-weight: 600;
+  letter-spacing: 0.2rem;
 }
 
-.list-img {
+.img {
   width: auto;
 }

@@ -5,7 +5,7 @@ import ale from "../public/ale.jpeg";
 import stout from "../public/stout.webp";
 import redAle from "../public/red-ale.jpeg";
 
-export default function Home() {
+const Home = () => {
   return (
     <main>
       <header className="home__header">Chose your style</header>
@@ -46,4 +46,6 @@ export default function Home() {
       </section>
     </main>
   );
-}
+};
+
+export default Home;
