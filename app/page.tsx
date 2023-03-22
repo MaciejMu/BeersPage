@@ -32,17 +32,6 @@ const Home = () => {
           />
           <p className="styles__name">STOUTS</p>
         </Link>
-        <Link href="/red-ale" className="styles__red-ale">
-          <Image
-            src={redAle}
-            alt="a pint of red ale beer image"
-            placeholder="blur"
-            width={800}
-            height={800}
-            className="styles__img"
-          />
-          <p className="styles__name">RED-ALE</p>
-        </Link>
       </section>
     </main>
   );

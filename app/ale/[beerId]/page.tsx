@@ -16,11 +16,11 @@ const Beer = async ({ params: { beerId } }: PageProps) => {
     return notFound();
   }
   return (
-    <>
+    <div className="single">
       <h1 className="single-beer__title">{beer.name}</h1>
       <article className="single-beer">
         <CustomImage
-          className="img"
+          className={"img"}
           src={beer.image}
           alt={`${beer.name} image`}
           width={400}
@@ -54,7 +54,7 @@ const Beer = async ({ params: { beerId } }: PageProps) => {
           </p>
         </section>
       </article>
-    </>
+    </div>
   );
 };
 

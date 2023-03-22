@@ -28,27 +28,27 @@ body {
 main {
   display: flex;
   flex-direction: column;
-}
-
-section {
-  height: 60vh;
-  display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
+.styles {
+  height: 40%;
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+}
+
 .styles__ale,
-.styles__stouts,
-.styles__red-ale {
-  height: 100%;
-  width: 33.33%;
+.styles__stouts {
+  width: 50%;
+  height: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 4rem;
   border: 3px solid var(--main-dark-color);
   text-decoration: none;
-  color: transparent;
   overflow: hidden;
 }
 
@@ -57,6 +57,8 @@ section {
 }
 
 .styles__name {
+  width: 45%;
+  color: transparent;
   position: absolute;
   display: flex;
   align-items: center;
@@ -64,17 +66,20 @@ section {
 }
 
 .styles__ale:hover > .styles__name,
-.styles__stouts:hover > .styles__name,
-.styles__red-ale:hover > .styles__name {
+.styles__stouts:hover > .styles__name {
+  color: black;
   transition: 0.7s ease-in-out;
-  width: 33.3%;
-  background: rgba(234, 226, 211, 0.459);
-  color: var(--main-dark-color);
-  height: 70%;
 }
 
 .styles__img {
-  height: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.styles__stouts:hover > .styles__img,
+.styles__ale:hover > .styles__img {
+  transition: 0.7s ease-in-out;
+  filter: blur(100px);
 }
 
 .home__header {
@@ -163,4 +168,71 @@ section {
 
 .img {
   width: auto;
+}
+
+@media (max-width: 858px) {
+  html {
+    font-size: 90%;
+  }
+
+  .styles {
+    flex-direction: column;
+  }
+
+  .styles__ale,
+  .styles__stouts {
+    width: 100%;
+  }
+
+  .single-beer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img {
+    height: 300px;
+    width: 300px;
+  }
+
+  .information-section {
+    align-items: center;
+  }
+
+  .single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .styles__name {
+    color: var(--main-dark-color);
+    background-color: rgba(234, 226, 211, 0.571);
+    width: 100%;
+  }
+
+  .styles__stouts:hover > .styles__img,
+  .styles__ale:hover > .styles__img {
+    filter: none;
+  }
+}
+
+@media (max-width: 658px) {
+  html {
+    font-size: 80%;
+  }
+
+  .data {
+    width: 70vw;
+  }
+
+  .img {
+    margin: 5% 0;
+    height: 200px;
+    width: 200px;
+  }
+
+  .beers {
+    flex-direction: column;
+  }
 }
