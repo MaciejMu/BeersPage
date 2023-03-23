@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CustomImage from "../components/customImg/customImage";
+import CustomImage from "../../src/components/customImg/customImage";
 import { Beer } from "../../types/types";
 
 const fetchBeer = async () => {

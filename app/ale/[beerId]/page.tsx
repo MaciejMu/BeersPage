@@ -1,7 +1,7 @@
 import { Beer } from "@/types/types";
 import React from "react";
 import notFound from "./not-found";
-import CustomImage from "@/app/components/customImg/customImage";
+import CustomImage from "@/src/components/customImg/customImage";
 import { PageProps } from "@/types/types";
 
 const fetchBeer = async (beerId: string) => {

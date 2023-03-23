@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import Navbar from "./components/navbar/navbar";
+import Navbar from "../src/components/navbar/navbar";
 import { Playfair_Display } from "next/font/google";
 
 const playfairDisplay = Playfair_Display({

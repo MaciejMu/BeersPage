@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import ale from "../public/ale.jpeg";
 import stout from "../public/stout.webp";
-import redAle from "../public/red-ale.jpeg";
 
 const Home = () => {
   return (
