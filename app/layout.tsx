@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import Navbar from "../src/components/navbar/navbar";
 import { Playfair_Display } from "next/font/google";
+import CartContext from "@/src/context/cartContext";
 
 const playfairDisplay = Playfair_Display({
   weight: ["400", "500", "800"],
@@ -21,7 +22,7 @@ export default function RootLayout({
     <html lang="en" className={`${playfairDisplay.className}`}>
       <body>
         <Navbar />
-        {children}
+        <CartContext>{children}</CartContext>
       </body>
     </html>
   );

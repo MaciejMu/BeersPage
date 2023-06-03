@@ -1,8 +1,8 @@
 import { Beer } from "@/types/types";
-import React from "react";
 import notFound from "./not-found";
 import CustomImage from "@/src/components/customImg/customImage";
 import { PageProps } from "@/types/types";
+import AddToCard from "@/src/components/AddToCard/AddToCard";
 
 const fetchBeer = async (beerId: string) => {
   const res = await fetch(`https://api.sampleapis.com/beers/ale/${beerId}`);
@@ -53,6 +53,16 @@ const Beer = async ({ params: { beerId } }: PageProps) => {
             adipisci suscipit!
           </p>
         </section>
+        <AddToCard
+          price={beer.price}
+          name={beer.name}
+          rating={{
+            average: 0,
+            reviews: 0,
+          }}
+          image={beer.image}
+          id={beer.id}
+        />
       </article>
     </div>
   );
