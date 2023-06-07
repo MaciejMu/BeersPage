@@ -7,7 +7,7 @@ import stout from "../public/stout.webp";
 const Home = () => {
   return (
     <main>
-      <header className="home__header">Chose your style</header>
+      <h2>Chose your style</h2>
       <section className="styles">
         <a href="/ale" className="styles__ale">
           <Image

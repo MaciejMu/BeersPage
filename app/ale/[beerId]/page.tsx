@@ -38,31 +38,19 @@ const Beer = async ({ params: { beerId } }: PageProps) => {
             eveniet rerum? Vero neque harum quod quae minima enim, tempora
             dignissimos? Esse tempore debitis deserunt dignissimos cum,
             asperiores fugit! Est tenetur minus provident illum veniam
-            excepturi! Magnam odit nostrum omnis dolores voluptates. Voluptatem
-            nam laudantium ipsam quam asperiores? Soluta quis possimus sunt
-            mollitia sit quisquam ducimus impedit rerum doloribus culpa minus
-            blanditiis incidunt corporis ipsum et assumenda, obcaecati quas sed
-            quia neque unde harum fuga! Adipisci sed repellat, nisi velit, eius
-            quis corporis nihil eos et omnis repudiandae possimus explicabo
-            eveniet voluptas molestiae. Ex possimus id vero, quia consequatur
-            sit tempore fugiat ad maiores optio magnam fuga rerum consequuntur
-            non neque repellendus porro corporis asperiores vel at sapiente enim
-            quis aspernatur? Aperiam cumque, eum eligendi temporibus provident
-            error pariatur hic nesciunt recusandae atque incidunt debitis quia
-            omnis vero ex sapiente modi quaerat, quam ratione, facilis natus
-            adipisci suscipit!
+            excepturi! Magnam odit nostrum omnis dolores voluptates.
           </p>
+          <AddToCard
+            price={beer.price}
+            name={beer.name}
+            rating={{
+              average: 0,
+              reviews: 0,
+            }}
+            image={beer.image}
+            id={beer.id}
+          />
         </section>
-        <AddToCard
-          price={beer.price}
-          name={beer.name}
-          rating={{
-            average: 0,
-            reviews: 0,
-          }}
-          image={beer.image}
-          id={beer.id}
-        />
       </article>
     </div>
   );

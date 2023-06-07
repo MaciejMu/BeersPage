@@ -16,15 +16,12 @@ export function useCartContext() {
   return useContext(CartContext);
 }
 
-// type Props = {
-//   children: ReactNode;
-// };
-
 const Cart = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<Beer[] | []>([]);
 
   const addProduct = (beer: Beer) => {
-    setProducts((prev) => [
+    setProducts((prev: Beer[]) => [
+      ...prev,
       {
         price: beer.price,
         name: beer.name,
@@ -35,17 +32,13 @@ const Cart = ({ children }: { children: ReactNode }) => {
         image: beer.image,
         id: beer.id,
       },
-      ...prev,
     ]);
   };
 
-  //   const deleteProduct = () => {};
+  // const deleteProduct = () => {};
+
   const value = { products, addProduct };
-  return (
-    <>
-      <CartContext.Provider value={value}>{children}</CartContext.Provider>;
-    </>
-  );
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 
 export default Cart;

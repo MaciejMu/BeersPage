@@ -19,6 +19,15 @@ body {
   background: var(--main-light-color);
 }
 
+h2 {
+  font-size: 42px;
+  padding: 40px;
+}
+
+h3 {
+  max-width: 200px;
+}
+
 .home__header {
   padding: 3%;
   font-size: 2rem;
@@ -36,7 +45,6 @@ main {
   width: 90vw;
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
 }
 
 .styles__ale,
@@ -101,7 +109,7 @@ main {
   background: rgb(247, 241, 229);
 }
 
-.error__msg {
+.msg {
   padding: 5%;
   font-size: 4rem;
 }
@@ -160,6 +168,11 @@ main {
   flex-direction: column;
   align-items: flex-start;
   padding: 0 3%;
+}
+
+.information-section__container {
+  width: 100%;
+  display: flex;
 }
 
 .information-section__price {
@@ -251,10 +264,6 @@ main {
   scale: 1.2;
 }
 
-h2 {
-  font-size: 42px;
-}
-
 .cart__container {
   margin: auto;
   width: 80vw;
@@ -267,7 +276,7 @@ h2 {
 .card__item {
   display: flex;
   align-items: center;
-  background: #fff;
+  background: rgb(247, 241, 229);
   width: 100%;
   justify-content: space-around;
   padding: 20px;
@@ -290,4 +299,22 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.subtotal {
+  width: 100%;
+  text-align: center;
+  margin: 10vh 0 5vh 0;
+  padding: 20px;
+  font-size: 24px;
+  border-top: 2px solid var(--main-dark-color);
+}
+
+.add {
+  margin: 20px 0;
+  border: 2px solid var(--main-dark-color);
+  width: 120px;
+  height: 50px;
+  background: rgb(247, 241, 229);
+  cursor: pointer;
 }
