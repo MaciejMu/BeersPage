@@ -5,11 +5,11 @@ import { ReactNode, createContext, useContext, useState } from "react";
 export const CartContext = createContext<{
   products: Beer[];
   addProduct: (beer: Beer) => void;
-  //   deleteProduct: () => void;
+  deleteProduct: (beer: Beer) => void;
 }>({
   products: [],
   addProduct: () => {},
-  //   deleteProduct: () => {},
+  deleteProduct: () => {},
 });
 
 export function useCartContext() {
@@ -35,9 +35,11 @@ const Cart = ({ children }: { children: ReactNode }) => {
     ]);
   };
 
-  // const deleteProduct = () => {};
+  const deleteProduct = (beer: Beer) => {
+    setProducts(products.filter((p) => p.id !== beer.id));
+  };
 
-  const value = { products, addProduct };
+  const value = { products, addProduct, deleteProduct };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };
 

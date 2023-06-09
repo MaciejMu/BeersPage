@@ -4,7 +4,7 @@ import { Beer } from "@/types/types";
 import Image from "next/image";
 
 const Cart = () => {
-  const { products } = useCartContext();
+  const { products, deleteProduct } = useCartContext();
 
   let subtotal = 0;
 
@@ -20,7 +20,7 @@ const Cart = () => {
         {products ? (
           products.map((product: Beer) => (
             <div className="card__item" key={product.id}>
-              <button>X</button>
+              <button onClick={() => deleteProduct(product)}>X</button>
               <Image
                 src={product.image}
                 width={100}
