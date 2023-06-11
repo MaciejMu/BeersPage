@@ -1,7 +1,7 @@
 "use client";
+import CustomImage from "@/src/components/customImg/customImage";
 import { useCartContext } from "@/src/context/cartContext";
 import { Beer } from "@/types/types";
-import Image from "next/image";
 
 const Cart = () => {
   const { products, deleteProduct } = useCartContext();
@@ -17,16 +17,17 @@ const Cart = () => {
     <>
       <div className={"cart__container"}>
         <h2>Cart</h2>
-        {products ? (
+        {products[0] ? (
           products.map((product: Beer) => (
             <div className="card__item" key={product.id}>
               <button onClick={() => deleteProduct(product)}>X</button>
-              <Image
+              <CustomImage
                 src={product.image}
                 width={100}
                 height={100}
                 alt={product.name}
-              ></Image>
+                unoptimized
+              ></CustomImage>
               <h3>{product.name}</h3>
               <p>{product.price}</p>
             </div>
@@ -35,7 +36,9 @@ const Cart = () => {
           <p className="msg">your cart is empty</p>
         )}
       </div>
-      <p className="subtotal">Subtotal: {subtotal.toFixed(2)}$</p>
+      {products[0] ? (
+        <p className="subtotal">Subtotal: {subtotal.toFixed(2)}$</p>
+      ) : null}
     </>
   );
 };

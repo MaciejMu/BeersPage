@@ -3,6 +3,8 @@ import React from "react";
 import notFound from "./not-found";
 import CustomImage from "@/src/components/customImg/customImage";
 import { PageProps } from "@/types/types";
+import Link from "next/link";
+import AddToCard from "@/src/components/AddToCard/AddToCard";
 
 const fetchBeer = async (beerId: string) => {
   const res = await fetch(`https://api.sampleapis.com/beers/stouts/${beerId}`);
@@ -16,7 +18,10 @@ const Beer = async ({ params: { beerId } }: PageProps) => {
     return notFound();
   }
   return (
-    <>
+    <div className="single">
+      <p className="single__button">
+        <Link href={"/ale"}>⮐ back to stouts beers</Link>
+      </p>
       <h1 className="single-beer__title">{beer.name}</h1>
       <article className="single-beer">
         <CustomImage
@@ -44,17 +49,21 @@ const Beer = async ({ params: { beerId } }: PageProps) => {
             blanditiis incidunt corporis ipsum et assumenda, obcaecati quas sed
             quia neque unde harum fuga! Adipisci sed repellat, nisi velit, eius
             quis corporis nihil eos et omnis repudiandae possimus explicabo
-            eveniet voluptas molestiae. Ex possimus id vero, quia consequatur
-            sit tempore fugiat ad maiores optio magnam fuga rerum consequuntur
-            non neque repellendus porro corporis asperiores vel at sapiente enim
-            quis aspernatur? Aperiam cumque, eum eligendi temporibus provident
-            error pariatur hic nesciunt recusandae atque incidunt debitis quia
-            omnis vero ex sapiente modi quaerat, quam ratione, facilis natus
-            adipisci suscipit!
+            eveniet voluptas molestiae.
           </p>
+          <AddToCard
+            price={beer.price}
+            name={beer.name}
+            rating={{
+              average: 0,
+              reviews: 0,
+            }}
+            image={beer.image}
+            id={beer.id}
+          />
         </section>
       </article>
-    </>
+    </div>
   );
 };
 

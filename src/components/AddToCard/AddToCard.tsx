@@ -10,11 +10,11 @@ const AddToCard = (beer: Beer) => {
     <>
       {!isInCart[0] ? (
         <button className="add" onClick={() => addProduct(beer)}>
-          Add Product
+          ➕ Add Product
         </button>
       ) : (
         <button className="add" onClick={() => deleteProduct(beer)}>
-          Remove Product
+          ✖️ Remove Product
         </button>
       )}
     </>

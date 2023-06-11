@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfairDisplay.className}`}>
+    <html lang="en" className={playfairDisplay.className}>
       <body>
         <Navbar />
         <CartContext>{children}</CartContext>

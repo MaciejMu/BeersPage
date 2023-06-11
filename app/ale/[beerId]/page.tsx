@@ -3,6 +3,7 @@ import notFound from "./not-found";
 import CustomImage from "@/src/components/customImg/customImage";
 import { PageProps } from "@/types/types";
 import AddToCard from "@/src/components/AddToCard/AddToCard";
+import Link from "next/link";
 
 const fetchBeer = async (beerId: string) => {
   const res = await fetch(`https://api.sampleapis.com/beers/ale/${beerId}`);
@@ -17,6 +18,9 @@ const Beer = async ({ params: { beerId } }: PageProps) => {
   }
   return (
     <div className="single">
+      <p className="single__button">
+        <Link href={"/ale"}>⮐ back to ale beers</Link>
+      </p>
       <h1 className="single-beer__title">{beer.name}</h1>
       <article className="single-beer">
         <CustomImage
