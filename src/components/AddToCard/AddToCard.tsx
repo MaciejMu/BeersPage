@@ -4,13 +4,11 @@ import { Beer } from "@/types/types";
 
 const AddToCard = (beer: Beer) => {
   const { addProduct, deleteProduct, products } = useCartContext();
-  const dupa = products.filter((x) => x.id === beer.id);
-  console.log(products);
-  console.log(dupa);
+  const isInCart = products.filter((x) => x.id === beer.id);
 
   return (
     <>
-      {!dupa[0] ? (
+      {!isInCart[0] ? (
         <button className="add" onClick={() => addProduct(beer)}>
           Add Product
         </button>

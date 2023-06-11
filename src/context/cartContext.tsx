@@ -1,6 +1,12 @@
 "use client";
 import { Beer } from "@/types/types";
-import { ReactNode, createContext, useContext, useState } from "react";
+import {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 export const CartContext = createContext<{
   products: Beer[];
@@ -19,25 +25,31 @@ export function useCartContext() {
 const Cart = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<Beer[] | []>([]);
 
+  const saveCart = (products: Beer[]) => {
+    localStorage.setItem("cart", JSON.stringify(products));
+  };
+
   const addProduct = (beer: Beer) => {
-    setProducts((prev: Beer[]) => [
-      ...prev,
-      {
-        price: beer.price,
-        name: beer.name,
-        rating: {
-          average: beer.rating.average,
-          reviews: beer.rating.reviews,
-        },
-        image: beer.image,
-        id: beer.id,
-      },
-    ]);
+    setProducts((prev) => {
+      const newCart = [beer, ...prev];
+      saveCart(newCart);
+      return newCart;
+    });
   };
 
   const deleteProduct = (beer: Beer) => {
-    setProducts(products.filter((p) => p.id !== beer.id));
+    setProducts((prev) => {
+      const newCart = prev.filter((p) => p.id !== beer.id);
+      saveCart(newCart);
+      return newCart;
+    });
   };
+
+  useEffect(() => {
+    const cartString = localStorage.getItem("cart");
+    const cart = cartString ? JSON.parse(cartString) : null;
+    cart && setProducts(cart);
+  }, []);
 
   const value = { products, addProduct, deleteProduct };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
