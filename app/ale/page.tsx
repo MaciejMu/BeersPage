@@ -21,8 +21,9 @@ const Stout = async ({
 
     const enteries = beers.slice(start, end);
 
-  return enteries.map((b) => (
-    <>
+  return (
+  <>
+    {enteries.map((b) => (
     <Link className="beers" href={`/ale/${b.id}`} key={b.id}>
       <article className="data">
         <h2 className="data__number">{b.id}</h2>
@@ -36,9 +37,9 @@ const Stout = async ({
         height={150}
         unoptimized />
     </Link>
-    <PaginationControls hasNextPage={end < beers.length} hasPrevPage={start > 0} numberOfItmes={beers.length} />
-    </>
-  ));
-};
+  ))}
+  <PaginationControls hasNextPage={end < beers.length} hasPrevPage={start > 0} numberOfItmes={beers.length} />
+  </>
+)};
 
 export default Stout;
