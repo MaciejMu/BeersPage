@@ -41,14 +41,14 @@ const PaginationControls: FC<PaginationControlsProps> = (
       <button
         disabled={!hasNextPage}
         onClick={() => {
-          router.push(`/?page=${Number(page) + 1}&per_page=${per_page}`)
+          router.push(`/${beerType}?page=${Number(page) + 1}&per_page=${per_page}`)
         }}>
         next page
       </button>
       <form action="/action_page.php">
   <label htmlFor="facts">Facts on page:</label>
   <select id="facts" name="facts" 
-  onChange={e=>router.push(`/?page=${Number(page)}&per_page=${e.target.value}`)}>
+  onChange={e=>router.push(`/${beerType}?page=${Number(page)}&per_page=${e.target.value}`)}>
     <option value="5">5</option>
     <option value="10">10</option>
     <option value="15">15</option>
