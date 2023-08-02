@@ -7,13 +7,15 @@ interface PaginationControlsProps {
   hasNextPage: boolean
   hasPrevPage: boolean
   numberOfItmes:number
+  beerType:string
 }
 
 const PaginationControls: FC<PaginationControlsProps> = (
   {
     hasNextPage,
     hasPrevPage,
-    numberOfItmes
+    numberOfItmes,
+    beerType
   }
 ) => {
   const router = useRouter()
@@ -27,7 +29,7 @@ const PaginationControls: FC<PaginationControlsProps> = (
       <button
         disabled={!hasPrevPage}
         onClick={() => {
-          router.push(`/?page=${Number(page) - 1}&per_page=${per_page}`)
+          router.push(`/${beerType}?page=${Number(page) - 1}&per_page=${per_page}`)
         }}>
         prev page
       </button>

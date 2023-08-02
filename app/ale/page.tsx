@@ -38,7 +38,7 @@ const Stout = async ({
         unoptimized />
     </Link>
   ))}
-  <PaginationControls hasNextPage={end < beers.length} hasPrevPage={start > 0} numberOfItmes={beers.length} />
+  <PaginationControls hasNextPage={end < beers.length} hasPrevPage={start > 0} numberOfItmes={beers.length} beerType={'ale'}/>
   </>
 )};
 
