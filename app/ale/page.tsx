@@ -2,7 +2,6 @@ import Link from "next/link";
 import CustomImage from "../../src/components/customImg/customImage";
 import { Beer } from "../../types/types";
 import PaginationControls from "@/src/components/PagginationControls/PagginationControls";
-import { Suspense } from "react";
 
 const fetchBeer = async () => {
   const res = await fetch("https://api.sampleapis.com/beers/ale");
@@ -25,7 +24,7 @@ const Stout = async ({
 
   return (
   <>
-  <Suspense fallback={<p>Loading...</p>}>
+  <div>
     {enteries.map((b) => (
       <Link className="beers" href={`/ale/${b.id}`} key={b.id}>
       <article className="data">
@@ -41,7 +40,7 @@ const Stout = async ({
         unoptimized />
     </Link>
   ))}
-  </Suspense>
+  </div>
   <PaginationControls hasNextPage={end < beers.length} hasPrevPage={start > 0} numberOfItmes={beers.length} beerType={'ale'}/>
   </>
 )};

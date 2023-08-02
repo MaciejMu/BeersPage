@@ -45,7 +45,7 @@ const PaginationControls: FC<PaginationControlsProps> = (
         }}>
         next page
       </button>
-      <form action="/action_page.php">
+      <form>
   <label htmlFor="facts">Facts on page:</label>
   <select id="facts" name="facts" 
   onChange={e=>router.push(`/${beerType}?page=${Number(page)}&per_page=${e.target.value}`)}>
